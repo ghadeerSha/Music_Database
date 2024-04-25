@@ -1,0 +1,50 @@
+Down,Jay sean,2009
+Hips done lie,Shakira,2005
+Lose Yourself,Eminem,2002
+Low,Flo,2007
+Umbrella,Rihanna,2008
+cant be tamed,Miley Cyrus,2010
+find your love,Drake,2010
+firework,katy perry,2010
+thank you next,Ariana grande,2019
+without me,Halsey,2019
+shallow,Lady gaga,2019
+perfect,ed sheeran,2018
+it aint me,selena and KYGO,2017
+too good at goodbyes,sam smith,2017
+one last time,ariana,2017
+havana,camila,2017
+what about us,pink,2017
+peaches,justin bieber,2021
+good 4 U,Olivia rodrigo,2021
+drivers license,olivia rodrigo,2021
+streets,doja cat,2021
+blinding lights,weekend,2021
+sorry,justin biebe,2016
+Hello,adele,2016
+closer,the chainsmokers,2016
+Hello,adele,2016
+Hips done lie,Shakira,2005
+Lose Yourself,Eminem,2002
+Low,Flo,2007
+Umbrella,Rihanna,2008
+blinding lights,weekend,2021
+cant be tamed,Miley Cyrus,2010
+closer,the chainsmokers,2016
+drivers license,olivia rodrigo,2021
+find your love,Drake,2010
+firework,katy perry,2010
+good 4 U,Olivia rodrigo,2021
+havana,camila,2017
+it aint me,selena and KYGO,2017
+one last time,ariana,2017
+peaches,justin bieber,2021
+perfect,ed sheeran,2018
+shallow,Lady gaga,2019
+sorry,justin biebe,2016
+streets,doja cat,2021
+thank you next,Ariana grande,2019
+too good at goodbyes,sam smith,2017
+what about us,pink,2017
+why me,unknown,2021
+without me,Halsey,2019
