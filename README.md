@@ -18,16 +18,12 @@ sports teams, etc.
 
 ## General Implementation Constraints
 
-Please use standard C++ techniques as discussed in the course. Only use code
-written by you.  
+Please use standard C++ techniques as discussed in the course.  
 
 **Important!** You *cannot* use `vector`, or any other C++ "container" class
 from the STL or elsewhere. Instead, we want you to re-use and modify your
 dynamic array class from assignment 3 to work with this assignment.
 
-**Do not** use raw C++ arrays directly. We are using C++, not C, and we want
-to see you take advantage of C++ features. Again, re-use the class you wrote
-for assignment 3.
 
 Not being allowed to use `vector` or similar classes might seem like a strange
 constraint. In "real life" you would definitely use `vector`, or any other
@@ -36,17 +32,8 @@ low-level details that go into coding classes such as `vector`. We want to see
 that you can do this, not just call pre-made code.
 
 
-## Submitting Your Work
-
-On Canvas, please submit `final_project.zip`, containing **all** the source code for the
-marker can compile and run your project. As described below, make sure to
-include the filled-in [README.txt](README.txt) file.
-
 
 ## Basic Requirements
-
-Before we give your program any marks, it must meet the following basic
-requirements:
 
 - It must compile on Ubuntu Linux. If the marker can't compile your code, your
   mark for this project will be 0.
@@ -54,32 +41,8 @@ requirements:
 - It must have no memory leaks or memory errors, according to `valgrind`,
   e.g.:
 
-  ```
-  $ valgrind ./final_project
-    
-  // ... lots of output ... 
-  ```
 
-  A program is considered to have no memory errors if:
-
-  - In the `LEAK SUMMARY`, `definitely lost`, `indirectly lost`, and `possibly
-    lost` must all be 0.
-
-  - The `ERROR SUMMARY` reports 0 errors.
-
-  - It is usually okay if **still reachable** reports a non-zero number of
-    bytes.
-
-- **You must include the large comment section with student info and the
-  statement of originality in the file with main()**. If your submitted
-  program does not have this, then we will assume your work is not original
-  and it might not be marked.
-  
-If your program meets all these basic requirements, then it will be graded
-using the marking scheme below.
-
-
-### Source Code Readability (6 marks)
+### Source Code Readability 
 
 - All names of variables, functions, structs, classes, etc. are sensible,
   self-descriptive, and consistent.
@@ -93,58 +56,29 @@ using the marking scheme below.
   very important. There are no unnecessary comments, and no commented-out
   code.
 
-- Appropriate features of C++ are used in an appropriate way. For example, do
-  **not** use a feature of C (like C-style strings) when there is a better C++
-  feature (e.g. the standard `string` class). Don't use any features you don't
-  understand.
-
 - Overall, the source code is easy to read and understand.
 
 
 ### Design Features (8 marks)
 
-**(1 mark)** A class that stores a single database record. The name of this
+- A class that stores a single database record. The name of this
 class is up to you, but it should describe what it stores. For instance, if
 your database is storing songs, then a good name for this class is `Song`.
 
-**(1 mark)** A class called `Database` that stores all the records. The
+ - A class called `Database` that stores all the records. The
 methods of this class are probably where you want to implement the searching
 and sorting functions.
 
-**(1 mark)** A class called `Menu` that represents a menu of choices that the
+- A class called `Menu` that represents a menu of choices that the
 user can choose from. See below for more details.
 
-**(1 mark)** The three classes above are in their own `.h` files. There should
-be a single `main()` function in a file named `final_project.cpp` that is
-compiled with the command `make final_project`, using [this
-makefile](makefile).
-
-You can create more classes than the three above, but you must have at *least*
-these three classes.
-
-**(3 marks)** Sensible use of `public`, `private`, constructors, destructors,
-and methods. You can use inheritance if it makes sense, but it's not required.
-
-**(1 mark)** Fill in [README.txt](README.txt) and include it in your
-submission.
+<img width="293" alt="start program" src="https://github.com/ghadeerSha/Music_Database/assets/167367841/f791595b-374a-44dc-9ba4-6a64a69ebbcd">
 
 
-### The Database Class (5 marks)
-
-**(5 marks)** Using a modified version of your dynamic array class from
-assignment 3 (and *not* just using raw arrays without a class).
-
-As described above, **don't** use `vector`, or any other C++ "container" class
-from the STL or elsewhere. The marker will check this after they mark your
-project, and you have used `vector` or a similar class, then your score for
-this assignment will be set to **50% of the total mark** (if your mark before
-this check is less than 50%, then your mark won't be changed).
+### The Database Class 
 
 
-### Menus (2 marks)
-
-**(1 mark)** Menus present the user choices in the terminal. For example, the
-main menu might look like this:
+### Menus 
 
 ```
 Welcome to the Song Database!
@@ -159,38 +93,19 @@ Welcome to the Song Database!
 Enter the letter of your choice: 
 ```
 
-Make your menus neat and tidy and easy to use. In this example, the choices
-are made by choosing letters, but you could use numbers instead. Do what you
-think is best.
+### Adding a Record 
 
-**(1 mark)** When the user enters an invalid menu choice, the program re-asks
-the user to pick a choice.
-
-
-### Adding a Record (4 marks)
-
-**(1 mark)** When the user chooses to enter a record, then your program asks
+- When the user chooses to enter a record, then your program asks
 them to enter each piece of data in the record. After the user enters valid
 data, then your program should say the record has been added, and go back to
 the main menu.
 
-**(1 mark)** If the record already exists in the database, then you should
-tell the user the record already exists and *not* add a new record.
-
-**(1 mark)** *Don't* let the user enter invalid data. For instance, when
-entering the year a song was published, if the user enters out-of-range
-numbers, like -343 or 2201, then your program should re-ask the user for a
-valid number.
-
-**(1 mark)** If the user enters the wrong *type* of data, then your program
-should re-ask the user for correct data. For instance, when entering the year
-a song was published, if the user enters a string like "this year", then your
-program should re-ask the user for a valid number.
+<img width="179" alt="Database_Add" src="https://github.com/ghadeerSha/Music_Database/assets/167367841/38d0197d-c397-4a5e-9ae8-9b4920cf39b9">
 
 
-### Finding a Record (5 marks)
+### Finding a Record 
 
-**(1 mark)** When the user chooses this option they are shown a sub-menu that
+- When the user chooses this option they are shown a sub-menu that
 lists the different ways they can search for a record. The user should be
 allowed to search for any kind of data in the record. For example, in a song
 database where song records consist of a name, artist, and year, the sub-menu
@@ -211,39 +126,40 @@ You can search by:
 Enter the letter of your choice: 
 ```
 
-**(1 mark)** For including an option to return to the main menu.
-
-**(1 mark)** When searching for strings, one kind of search should print all
+- When searching for strings, one kind of search should print all
 records where the typed-in string from the user exactly matches the
 appropriate field of a record.
 
-**(1 mark)** When searching for strings, one kind of search should print all
+- When searching for strings, one kind of search should print all
 records where the typed-in string from the user occurs as a *substring* in the
 appropriate field of a record.
 
-**(1 mark)** When searching for numbers, one kind of search should print all
+- When searching for numbers, one kind of search should print all
 records where the typed-in number from the user exactly matches the
 appropriate field of a record.
 
-**(1 mark)** When searching for numbers, one kind of search should print all
+- When searching for numbers, one kind of search should print all
 records where the number of the appropriate field of a record is in a range,
 from low to high. This would, for example, let the user see all songs in a
 song database from the year 2005 to 2015.
 
-In all cases of finding records, if no matching records are found, then print
-a helpful message to the screen telling the user this.
+
+<img width="197" alt="Database_Find" src="https://github.com/ghadeerSha/Music_Database/assets/167367841/e4a7032a-fe4c-416d-b49c-108f5fb9b870">
 
 
-### Deleting a Record (4 marks)
+### Deleting a Record 
 
-**(1 mark)** When deleting a record, one way to do this is to search by the
+- When deleting a record, one way to do this is to search by the
 *exact* string that occurs in a field of the record. 
 
-**(1 mark)** When deleting a record, one way to do this is to search for a
+- When deleting a record, one way to do this is to search for a
 *substring* that occurs in a field of the record.
 
-**(1 mark)** When deleting a record, one way to do this is to search by the
-*exact* number that occurs in a field of the record. 
+- When deleting a record, one way to do this is to search by the
+*exact* number that occurs in a field of the record.
+
+<img width="268" alt="Database_Delete" src="https://github.com/ghadeerSha/Music_Database/assets/167367841/ae683708-5a94-4d26-bf82-cc5e094e2667">
+
 
 **(1 mark)** When deleting a record, one way to do this is to search for
 numbers in a field that appear in a low to high range of numbers.
@@ -257,42 +173,31 @@ In all cases of deleting records:
   telling the user this
 
 
-### Listing Records (4 marks)
+### Listing Records
 
-**(1 mark)** For each string field in your record, allow the user to list all
+- For each string field in your record, allow the user to list all
 records in *alphabetical order*.
 
-**(1 mark)** For each string field in your record, allow the user to list all
+- For each string field in your record, allow the user to list all
 records in *reverse alphabetical order*.
 
-**(1 mark)** For each numeric field in your record, allow the user to list all
+- For each numeric field in your record, allow the user to list all
 records in *ascending order*.
 
-**(1 mark)** For each numeric field in your record, allow the user to list all
+- For each numeric field in your record, allow the user to list all
 records in *descending order*.
 
 
-### Starting and Quitting the Database (4 marks)
+<img width="249" alt="Database_List" src="https://github.com/ghadeerSha/Music_Database/assets/167367841/b40444cb-3939-4318-a92e-8cc816388457">
 
-**(1 mark)** When your program starts it reads the records from a text file
+<img width="214" alt="Database_ListName" src="https://github.com/ghadeerSha/Music_Database/assets/167367841/fbfdad64-9219-4e57-a1a6-4b663dbc588b">
+
+
+### Starting and Quitting the Database 
+
+- When your program starts it reads the records from a text file
 `database.txt` into memory.
 
-**(1 mark)** In the main menu, there is an option for the user to quit the
+- In the main menu, there is an option for the user to quit the
 database. When the user chooses it the program ends.
 
-**(1 mark)** When the user quits the database, all the records are saved to a
-text file named `database.txt`. The exact format of the file is up to you, but
-you might want to use comma-separated values, e.g.:
-
-```
-What About Me?, Snarky Puppy, 2014
-Let the Mystery Be, Iris DeMent, 1992
-```
-
-**Be careful**: Comma-separated values might not work correctly if any commas
-appear in names. If your data has commas, you could choose some other
-character (or string) to be the separator.
-
-**(1 mark) Please put *at least* 25 records (ideally more!) in `database.txt`
-when you submit it. That way the marker will have something to try when they
-test your program.
